@@ -35,7 +35,8 @@ module.exports = function (text) {
     // - 25°11′49.7″N 55°16′26.8″E
     // - 47°12'1.00 N 1°34'26.17 W
     // - 47 12'1.00 N 1 34'26.17 W
-    var dmsMatch = /^(\d+)[° ](\d+)[’′'](\d+(?:\.\d+)?)[″"]?([NS])(?:ord|ud|orth|outh)?[,/]?(\d+)[° ](\d+)[’′'](\d+(?:\.\d+)?)[″"]?([EWO])(?:st|ast|est|uest)?$/i.exec(cleanText);
+    // - 47° 10′ 10,45″ N, 2° 12′ 16,75″ E
+    var dmsMatch = /^(\d+)[° ](\d+)[’′'](\d+(?:[.,]\d+)?)[″"]?([NS])(?:ord|ud|orth|outh)?[,/]?(\d+)[° ](\d+)[’′'](\d+(?:[.,]\d+)?)[″"]?([EWO])(?:st|ast|est|uest)?$/i.exec(cleanText);
     if (dmsMatch) {
         lat = convertDMSToDD(dmsMatch[1], dmsMatch[2], dmsMatch[3], dmsMatch[4]);
         lon = convertDMSToDD(dmsMatch[5], dmsMatch[6], dmsMatch[7], dmsMatch[8]);
