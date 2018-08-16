@@ -1,4 +1,4 @@
-var _ = require('underscore');
+var isNumber = require('lodash/isNumber');
 
 module.exports = function (text) {
     var cleanText = text
@@ -75,7 +75,7 @@ module.exports = function (text) {
 
 function parseFrenchOrEnglishFloat(s) {
     var num = s;
-    if (!_.isNumber(num))
+    if (!isNumber(num))
         num = parseFloat(s.replace(',', '.'));
     return num;
 }

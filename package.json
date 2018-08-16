@@ -4,7 +4,7 @@
     "version": "0.1.0",
     "main": "lon-lat-parser.js",
     "dependencies": {
-        "underscore": "~1.6.0"
+        "lodash": "^4.17.10"
     },
     "devDependencies": {
         "mocha": "^2.1.0",
